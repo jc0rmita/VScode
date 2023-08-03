@@ -1,103 +1,175 @@
+#include <iostream>
+#include <windows.h>
+#include <conio.h>
+using namespace std;
+
+void gotoxy(short x,short y)
+
+{
+   COORD pos = {x, y};
+   SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), pos);
+}
+
+void settingArray(int steps[][7], int WEEKS){
+  
+       const int DAYS=7;
+        
+        
+         for(int i=0;i<WEEKS;i++){
+            for(int j=0;j<DAYS;j++){
+              cout<<"Enter your steps for week "<<i+1<<" day "<<j+1<<": ";
+              cin>>steps[i][j];
+               }
+            }
+
+}
+
+int totalsteps(int steps[][7], int WEEKS){
+
+    const int DAYS =7;
+     int totalSteps=0;
+
+
+     for(int i=0;i<WEEKS;i++){
+        for(int j=0;j<DAYS;j++){
+         totalSteps +=steps[i][j];
+       }
+     }
+       
+       return totalSteps;
+       getch();
+       //cout<<"\nYour total steps for two weeks was: "<<totalSteps<<endl;
+       
+}
+
+int totalEvenSteps(int steps[][7], int WEEKS){
+    
+    const int DAYS=7;
+    int totalEvenSteps=0;
+
+for(int i=0;i<WEEKS;i++){
+    for(int j=0;j<DAYS;j++){
+        if(steps[i][j]%2==0){
+        totalEvenSteps +=steps[i][j];
+        }
+    }
+}
+
+return totalEvenSteps;
+getch();
+
+//cout<<"\nYour total even numbers steps for two weeks was: "<<totalEvenSteps<<endl;
+}
+
+void display(int steps[][7], int WEEKS){
+
+const int DAYS=7;
+        
+         for(int i=0;i<WEEKS;i++){
+            for(int j=0;j<DAYS;j++){
+              cout<<"Week "<<i+1<<" day "<<j+1<<": ";
+              cout<<steps[i][j]<<"\n";
+               }
+            }
+       
+}
+
+double pound(int steps, double pound){
+double calories;
+
+calories = steps * 0.05;
+pound = calories / 3500;
+
+return pound;
+//cout<<"total pound loss is:"<< pound;
+
+}
+
+
+int main(){
+
+int WEEKS;
+const int DAYS=7;
+int steps[100][DAYS];
 int choice;
 do{
     system("cls");
-gotoxy(63,1);
-cout<<"Main Menu"<<endl;
-gotoxy(50,3);
-cout<<"1 - Print number from 1-10"<<endl;
-gotoxy(50,4);
-cout<<"2 - Print all even number numbers from 1 to N"<<endl;
-gotoxy(50,5);
-cout<<"3 - Display its factorial"<<endl;
-gotoxy(50,6);
-cout<<"4 - Display the N fibonacci series"<<endl;
-gotoxy(50,7);
-cout<<"5 - Display the reverse of the number"<<endl;
-gotoxy(50,8);
-cout<<"6 - Identify whether the word is a palindrome"<<endl;
-gotoxy(50,9);
-cout<<"7 - Convert a decimal number to binary number"<<endl;
-gotoxy(50,10);
-cout<<"8 - Sum of all even numbers from 1 to N"<<endl;
-gotoxy(50,11);
-cout<<"9 - Sum of square of all even numbers from 1 to N"<<endl;
-gotoxy(50,12);
-cout<<"10 - Print letters from A-Z";
-gotoxy(50,13);
-cout<<"11 - Exit"<<endl;
 
-gotoxy(60,14);
-cout<<"Enter your choice: ";
-cin>>choice;
+    cout<<"Main Menu\n";
+    cout<<"1 - Setting array\n";
+    cout<<"2 - Total Steps\n";
+    cout<<"3 - Total Even Steps\n";
+    cout<<"4 - Display\n";
+    cout<<"5 - Convert steps to pounds\n";
+    cout<<"6 - Exit\n";
+    cout<<"Enter your choice: ";
+    cin>>choice;
 
-switch (choice){
+    switch(choice){
 
-case 1:
-    printten();
-    getch();
-    break;
+        case 1:
+        {
+        system("cls");
+       
+       do{
 
-case 2:
-even(10);
-getch();
-break;
+         cout<<"\nHow many weeks do you want? ";
+         cin>>WEEKS;
 
-case 3:
-cout<<factorial(6);
-getch();
-break;
+        if (WEEKS>100 || WEEKS<=0)
+        cout<<"\n[Invalid input please try again]"<<endl;
+        cout<<"\n------------------------------------------------"<<endl;
+
+        } while (WEEKS>100 || WEEKS<=0);
+    
+         settingArray(steps, WEEKS);
 
 
-case 4:
-fib(5);
-getch();
-break;
+        getch();
+        break;
+    }
+        
+        case 2:
+        {
+            
+        system("cls");
+         
 
-case 5:
-rev();
-getch();
-break;
-
-
-case 6:
-palindrome();
-getch();
-break;
-
-case 7:
-binary(5);
-getch();
-break;
+         cout<<"The total steps is: "<<totalsteps(steps,WEEKS);
+         getch();
+        
+        break;
+        }
+        
 
 
+        case 3:
+        {
+        system("cls");
+        cout<<"The total even number steps is: "<<totalEvenSteps(steps,WEEKS);
+        getch();
+        break;
+        }
 
-case 8:
-cout<<sumeven();
-getch();
-break;
+        case 4:
+        {
+        system("cls");
+        display(steps,WEEKS);
+        getch();
+        break;
+        }
+        
+        case 5:
+        {
+         system("cls");
+        
+        cout<<"The total pound loss is: "<<pound(steps,pound);
+       // pound(steps,pound);
+         getch();
+         break;
+        }
+    }
 
-case 9:
-cout<<sumsquare(2,6);
-getch();
-break;
-
-case 10:
-az();
-getch();
-break;
-
-case 11:
-system("cls");
-exit(0);
-getch();
-break;
-
-
-default:
-gotoxy(63,15);
-cout<<"Invalid choice";
-getch();
-break;
-
+}while(choice);
+    return 0;
 }
-    }while(choice);

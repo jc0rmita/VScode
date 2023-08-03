@@ -1203,7 +1203,189 @@ for (char c = 'A';c<='Z';c++)
 }
 
 
+//============================================================================================================================
+//function of nested for
 
+void for1(int z) {
+        for (int x=1; x <= z; x++) {
+        for (int y = 1; y <= x; y++) 
+            cout << "*";
+        cout << endl;
+    }
+    getch();
+}
+
+
+void for2(int x) {
+        for (x; x >= 1; x--) {
+        for (int y = 1; y <= x; y++) 
+            cout << "*";
+        
+        cout << endl;
+    }
+    getch();
+}
+
+
+void for3(int z) {
+        for (int x=1; x <= z; x++) {
+        for (int y = 1; y <= x; y++) 
+            cout << y;
+        
+        cout << endl;
+    }
+    getch();
+}
+
+
+void for4(int x){
+    for(x; x>=1; x--){
+        for(int y=1; y<=x; y++)
+            cout<<y;
+        cout<<endl;
+    }
+    getch();
+}
+
+//=============================================================================================================================    
+//function of nested while
+
+void while1(int z){
+    
+    int x=1;
+    while (x<=z){
+        int y=1;
+
+        while(y<=x){
+            cout<<"*";
+            y++;
+        }
+        x++;
+        cout<<endl;
+    }
+   getch();
+
+}
+
+void while2(int x){
+
+    while(x>=1){
+        int y=1;
+        while (y<=x){
+            cout<<"*";
+            y++;
+        }
+        x--;
+        cout<<endl;
+    }
+    getch();
+}
+
+void while3(int z){
+
+    int x=1;
+    while(x<=z){
+        int y=1;
+        while(y<=x){
+            cout<<y;
+            y++;
+        }
+        x++;
+        cout<<endl;
+    }
+    getch();
+}
+
+void while4(int x){
+
+    while(x>=1){
+        int y=1;
+        while(y<=x){
+            cout<<y;
+            y++;
+        }
+        x--;
+        cout<<endl;
+    }
+    getch();
+}
+
+//=================================================================================================================================
+//function of nested do while
+
+void dowhile1(int z){
+
+    int x=1;
+    do{
+        int y=1;
+        do{
+            cout<<"*";
+            y++;
+        }
+        while(y<=x);
+        x++;
+    cout<<endl;
+
+    }
+    while(x<=z);   
+
+    getch();
+}
+
+
+void dowhile2(int x){
+
+    do {
+        int y=1;
+        do{
+            cout<<"*";
+            y++;
+        }
+        while(y<=x);
+
+        x--;
+        cout<<endl;
+    }
+    while(x>=1);
+
+    getch();
+}
+
+void dowhile3(int z){
+
+    int x=1;
+    do{
+        int y=1;
+        do{
+            cout<<y;
+            y++;
+        }
+        while(y<=x);
+        x++;
+        cout<<endl;
+    }
+    while(x<=z);
+
+    getch();
+}
+
+
+void dowhile4(int x){
+
+    do{
+        int y=1;
+        do{
+            cout<<y;
+            y++;
+        }
+        while(y<=x);
+        x--;
+        cout<<endl;
+    }
+    while(x>=1);
+
+    getch();
+}
 
 
 

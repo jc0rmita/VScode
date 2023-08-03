@@ -24,8 +24,9 @@ gotoxy(34,7); cout<<"Menu";
 gotoxy(32,9); cout<<"A - Sequence";
 gotoxy(32,10); cout<<"B - Selection";
 gotoxy(32,11); cout<<"C - Loop";
-gotoxy(32,12); cout<<"D - Exit";
-gotoxy(32,13); cout<<"Enter your choice: ";
+gotoxy(32,12); cout<<"D - Nested Loop";
+gotoxy(32,13); cout<<"E - Exit";
+gotoxy(32,14); cout<<"Enter your choice: ";
 cin>>choice1;
 
 
@@ -424,9 +425,261 @@ break;
 getch();
 break;
 
+//=============================================================================================================================
+case 'D':
+case 'd':
+
+ char choiceD;
+do{
+    system("cls");
+    cout<<"Main Menu\n";
+    cout<<"Nested Loop Execise\n";
+    cout<<"A - Nested For\n";
+    cout<<"B - Nested While\n";
+    cout<<"C - Nested Do While\n";
+    cout<<"D - Exit\n";
+    cout<<"Enter your choice: ";
+    cin>>choiceD;
+
+    switch (choiceD){
+
+        case 'A':
+        case 'a':
+         system("cls");
+         cout<<"Nested For\n";
+
+         char choice1;
+do{
+    system("cls");
+    cout<<"Main Menu\n";
+    cout<<"Nested For\n";
+    cout<<"A - Pyramid using [*]\n";
+    cout<<"B - Inverted Pyramid using [*]\n";
+    cout<<"C - Pyramid using numbers\n";
+    cout<<"D - Inverted Pyramid using numbers\n";
+    cout<<"E - Exit\n";
+    cout<<"Enter your choice: ";
+    cin>>choice1;
+
+    switch (choice1){
+
+        case 'A':
+        case 'a':
+
+        system("cls");
+        cout<<"Pyramid using [*]\n\n";
+        for1(5);
+        break;
+
+
+        case 'B':
+        case 'b':
+
+        system("cls");
+        cout<<"Inverted Pyramid using [*]\n\n";
+        for2(5);
+        break;
+
+
+        case 'C':
+        case 'c':
+
+        system("cls");
+        cout<<"Pyramid using numbers\n\n";
+        for3(5);
+        break;
+
+        case 'D':
+        case 'd':
+        
+        system("cls");
+        cout<<"Inverte Pyramid using numbers\n\n";
+        for4(5);
+        break;
+
+
+        case 'E':
+        case 'e':
+        system("cls");
+       // main();
+        break;
+
+
+    }
+    }
+    while(choice1 != 'e' && choice1 != 'E');
+
+        break;// break case A (nested for)
+
+
+        case 'B':
+        case 'b':
+
+        system("cls");
+        cout<<"Nested While\n";
+
+        char choice2;
+do{
+    system("cls");
+    cout<<"Main Menu\n";
+    cout<<"Nested While\n";
+    cout<<"A - Pyramid using [*]\n";
+    cout<<"B - Inverted Pyramid using [*]\n";
+    cout<<"C - Pyramid using numbers\n";
+    cout<<"D - Inverted Pyramid using numbers\n";
+    cout<<"E - Exit\n";
+    cout<<"Enter your choice: ";
+    cin>>choice2;
+
+    switch (choice2){
+
+        case 'A':
+        case 'a':
+
+        system("cls");
+        cout<<"Pyramid using [*]\n\n";
+        while1(5);
+        getch();
+        break;
+
+
+        case 'B':
+        case 'b':
+
+        system("cls");
+        cout<<"Inverted Pyramid using [*]\n\n";
+        while2(5);
+        break;
+
+
+        case 'C':
+        case 'c':
+
+        system("cls");
+        cout<<"Pyramid using numbers\n\n";
+        while3(5);
+        break;
+
+        case 'D':
+        case 'd':
+        
+        system("cls");
+        cout<<"Inverte Pyramid using numbers\n\n";
+        while4(5);
+        break;
+
+
+        case 'E':
+        case 'e':
+        system("cls");
+        
+        break;
+
+
+    }
+    }
+    while(choice2 != 'E' && choice2 != 'e');
+
+        break;//break case B (nested while)
+
+ 
+ 
+        case 'C':
+        case 'c':
+
+        system("cls");
+        cout<<"Nested Do While\n";
+
+        char choice3;
+do{
+    system("cls");
+    cout<<"Main Menu\n";
+    cout<<"Nested Do while\n";
+    cout<<"A - Pyramid using [*]\n";
+    cout<<"B - Inverted Pyramid using [*]\n";
+    cout<<"C - Pyramid using numbers\n";
+    cout<<"D - Inverted Pyramid using numbers\n";
+    cout<<"E - Exit\n";
+    cout<<"Enter your choice: ";
+    cin>>choice3;
+
+    switch (choice3){
+
+        case 'A':
+        case 'a':
+
+        system("cls");
+        cout<<"Pyramid using [*]\n\n";
+        dowhile1(5);
+        break;
+
+
+        case 'B':
+        case 'b':
+
+        system("cls");
+        cout<<"Inverted Pyramid using [*]\n\n";
+       dowhile2(5);
+        break;
+
+
+        case 'C':
+        case 'c':
+
+        system("cls");
+        cout<<"Pyramid using numbers\n\n";
+        dowhile3(5);
+        break;
+
+        case 'D':
+        case 'd':
+        
+        system("cls");
+        cout<<"Inverte Pyramid using numbers\n\n";
+        dowhile4(5);
+        break;
+
+
+        case 'E':
+        case 'e':
+        system("cls");
+        
+        break;
+
+
+    }
+    }
+    while(choice3 != 'E' && choice3 != 'e');
+        break;//break case C (nested do while)
+
+
+
+        case 'D':
+        case 'd':
+
+        system("cls");
+        main();
+        break;
+
+
+    }
+    }
+    while(choiceD);
+
+
+
+
+
+//getch();
+break;
+
+
+
+
+
 
 //==============================================================================================================================
-case ('D'): case 'd':
+case ('E'): case 'e':
 
 system("cls");
 exit(0);
