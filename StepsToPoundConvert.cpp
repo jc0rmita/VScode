@@ -5,8 +5,8 @@ using namespace std;
 int main(){
    
    int steps;
-   double calories, pound;
-   
+   double  pound;
+
 
    cout<<"Enter steps: ";
    cin>>steps;

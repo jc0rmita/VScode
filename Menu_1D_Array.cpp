@@ -1,10 +1,15 @@
+//JHON CARL T. ORMITA 
+//BSIT 1-1 
+
+
 #include <iostream>
 #include <conio.h>
 #include <cmath>
 #include <windows.h>
+#include <string>
 using namespace std;
 
-void gotoxy(short x,short y)
+void gotoxy(short x,short y) //function for clearscreen
 
 {
    COORD pos = {x, y};
@@ -52,17 +57,7 @@ for (int i=0; i<10; i++){
     getch();
 }
 
-void Display_All_Even(int arrays[][100], int row, int column){
 
-for (int i=0;i<row;i++){
-    for (int j=0;j<column;j++){
-      if (arrays[i][j]%2==0){
-        cout<<"Even number is: "<<arrays[i][j]<<endl;
-      }
-    }
-  }
-getch();
-}
 //=====================================================================================
 
 void Largest_Three(void){
@@ -145,43 +140,6 @@ void Largest_Three( int Array[]){
 
 }
 
-void Largest_Three(int Array1[][100], int roww, int columnn){
-
-    int num1=0, num2=0, num3=0;
-
-        cout<<"\nThe Three Largest number are: \n";
-
-        for(int i=0; i<5;i++){
-            for(int j=0; j<2;j++){
-
-                if (Array1[i][j]>num1){
-
-                    num3=num2;
-                    num2=num1;
-                    num1=Array1[i][j];
-
-                }
-
-                else if(Array1[i][j]>num2){
-                    num2=num1;
-                    num1=Array1[i][j];
-                }
-
-                else if(Array1[i][j]>num3){
-                    num3=Array1[i][j];
-                }
-            }
-        }
-
-        cout<<num1<<endl;
-        cout<<num2<<endl;
-        cout<<num3<<endl;
-
-        getch();
-    }
-
-
-
  //===============================================================================================================
  void Total_Pos_Neg(void){
     
@@ -238,28 +196,7 @@ cout<<"\n";
 
  }
 
- void Total_Pos_Neg(int ar[][100], int roow, int coolumn){
-
-    int totalP=0, totalN=0;
-
-   
-
-    for(int i=0;i<roow;i++){
-        for(int j=0;j<coolumn;j++){
-            if (ar[i][j]>0){
-                totalP += ar[i][j];
-
-            }
-            else{
-                totalN += ar[i][j];
-            }
-        }
-    }
-
-    cout<<"\nThe sum of all positive numbers is: "<<totalP<<endl;
-    cout<<"The sum of all negative numbers is: "<<totalN<<endl;
- }
-
+ 
 //===============================================================
  void Count_Int(int arr[], int size, int no){
 
@@ -281,7 +218,7 @@ cout<<"\n";
  getch();
  }
  
-void Count_Int(int arr1[][100], int rows, int columns){
+void Count_Int(int arr1[100], int size){
 
 int no, count=0;
 
@@ -290,12 +227,12 @@ int no, count=0;
    cin>>no;
 
 
-   for (int i=0; i<rows; i++){
-    for(int j=0;j<2;j++){
-    if(arr1[i][j]==no){
+   for (int i=0; i<size; i++){
+    
+    if(arr1[i]==no){
         count +=1;
         
-    }
+    
    }
    }
     if (count>0){
@@ -307,16 +244,73 @@ int no, count=0;
 
 getch();
 
+}
+
+
+void pyramid(int row){
+ 
+char x=65;
+
+while (x<row+65){
+    
+    char y='A';
+
+    while(y<=x){
+        cout<<x<<" ";
+       y ++;
+    } 
+    x++;
+    cout<<endl;
+}
 
 }
 
 
 
+
+
+int occurs(int ar[], int sizee){
+int max_count = 0;
+   int most_occured = 0;
+
+   for(int i=0; i<sizee; i++)
+   {
+    int count =1;
+
+    for(int j=i+1; j<sizee; j++)
+    {
+        if( ar[i]==ar[j])
+        {
+            count++;           
+        }
+    }
+        
+    if(count>max_count)
+    {
+        max_count = count;
+        most_occured = ar[i]; 
+        
+    }
+     
+   }
+
+
+
+  return most_occured;
+}
+
+
+
+
+
+
 int main(){
     int choice;
-
+    
 do{
 system("cls");
+
+
 
 
 cout<<"Main Menu\n";
@@ -324,7 +318,9 @@ cout<<"1 - Display all even\n";
 cout<<"2 - Largest three\n";
 cout<<"3 - Total Pos Neg\n";
 cout<<"4 - occurence\n";
-cout<<"5 - Exit\n";
+cout<<"5 - Most occured\n";
+cout<<"6 - Pyramid\n";
+cout<<"7 - Exit\n";
 cout<<"Enter your choice: ";
 cin>>choice;
 
@@ -337,10 +333,12 @@ switch (choice){
     case 1: 
      
     Display_All_Even();
+
 //=================================
     int num[10];
      
-     cout<<"\n\n";
+    cout<<"\n\n";
+
     for (int i=0; i<10;i++){
     cout<<"Enter a number "<<i+1<<": ";
     cin>>num[i];
@@ -348,109 +346,49 @@ switch (choice){
 
     Display_All_Even(num);
 
-//=======================================
-   int arrays[100][100], row, column;
-
-    cout<<"\n\nEnter row size: ";
-   cin>>row;
-
-   cout<<"Enter column size: ";
-   cin>>column;
-
-   cout<<"\n";
-
-  for(int i=0;i<row;i++){
-    cout<<"Row"<<i+1<<": \n";
-    for(int j=0;j<column;j++){
-      cout<<"Enter a number for row: "<<i+1<<" and column "<<j+1<<": ";
-      cin>>arrays[i][j];
-    }
-  }
-
-  Display_All_Even(arrays,row, column);
-  getch();
 
     break;
 
 
 
     case 2:
-
     
     Largest_Three();
 
     int Array[10];
     
     cout<<"\n";
+
     for(int i=0;i<=9;i++){
     	cout<<"Enter a number "<<i+1<<" : ";
-    	
     	cin>>Array[i];
 	}
 
-    Largest_Three(Array);
+     Largest_Three(Array);
 
-    //=============================================
-
-    int Array1[100][100], roww, columnn;
-   cout<<"\n\nEnter row size: ";
-   cin>>roww;
-
-   cout<<"Enter column size: ";
-   cin>>columnn;
-
-   cout<<"\n";
-
-  for(int i=0;i<roww;i++){
-    cout<<"Row"<<i+1<<": \n";
-    for(int j=0;j<columnn;j++){
-      cout<<"Enter a number for row: "<<i+1<<" and column "<<j+1<<": ";
-      cin>>Array1[i][j];
-    }
-  }
-
-    Largest_Three(Array1,roww,columnn);
-
-    break;
+      getch();
+      break;
 
 
 
     case 3:
      
      Total_Pos_Neg();
-     cout<<"\n\n";
+     
 //====================================================
+    
      int array[10];
+
+      cout<<"\n\n";
 
       for (int i=0; i<10; i++) {
         cout << "Enter element " << i+1 << ": ";
         cin >> array[i];
     }
+
     Total_Pos_Neg(array);
-//====================================================
-
-    int ar[100][100], roow, coolumn;
-
-   cout<<"\n\nEnter row size: ";
-   cin>>roow;
-
-   cout<<"Enter column size: ";
-   cin>>coolumn;
-
-   cout<<"\n";
-
-  for(int i=0;i<roow;i++){
-    cout<<"Row"<<i+1<<": \n";
-    for(int j=0;j<coolumn;j++){
-      cout<<"Enter a number for row: "<<i+1<<" and column "<<j+1<<": ";
-      cin>>ar[i][j];
-    }
-  }
-
-    Total_Pos_Neg(ar,roow,coolumn);
-
+   
     getch();
-
     break;
 
 
@@ -462,7 +400,7 @@ switch (choice){
 
     int arr[100], no, size;
 
-     cout<<"Enter size: ";
+    cout<<"Enter size: ";
     cin>>size;
 
     cout<<"\n";
@@ -479,41 +417,58 @@ switch (choice){
     Count_Int(arr,size,no);
 
 //===================================================
-    int arr1[100][100], rows, columns;
-
-cout<<"\n\n========================================";
-   cout<<"\n\nEnter row size: ";
-   cin>>rows;
-
-   cout<<"Enter column size: ";
-   cin>>columns;
-
-   cout<<"\n";
-
-   for (int i=0; i<rows;i++) {
-   
-    cout<<"Row"<<i+1<<": \n";
-    
-
-    for(int j=0;j<columns;j++){
-     
-     cout<<"Enter a number row "<<i+1<<" column "<<j+1<<": ";
-
-     cin>>arr1[i][j];
-   }
-   }
-
-    Count_Int(arr1,rows,columns);
-
-
+   getch();
 
     break;
 
     case 5:
     system("cls");
+    int sizee;
+
+    cout<<"Enter how many elements: ";
+    cin>>sizee;
+
+     int ar[100];
+
+    cout<<"Enter the elements"<<endl;
+     for(int i=0; i<sizee;i++)
+     {
+    
+      cin>>ar[i];
+     }
+   
+    cout<<"The most occured number is: " <<occurs(ar,sizee);
+
+   getch();
+    break;
+
+    case 6:
+    {
+        system("cls");
+        int row;
+
+        cout<<"Enter row: ";
+        cin>>row;
+
+        pyramid(row);
+        getch();
+        break;
+    }
+
+    case 7:
+    system("cls");
     exit(0);
+    break;
+
+    default:
+    cout<<"Invalid choice";
+    getch();
     break;
 }
 }while(choice);
+
+
+
+    getch();
     return 0;
 }

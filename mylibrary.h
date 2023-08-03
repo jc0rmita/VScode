@@ -720,9 +720,9 @@ void oddeven2(int numB){
 
 int large3(int num1A, int num2A, int num3A){
 
-system("cls");
+//system("cls");
 
-    cout<<"Largest among 3 numbers"<<endl;
+    cout<<"\n\nLargest among 3 numbers"<<endl;
 cout<<"----------------------------"<<endl;
 
 //int num1A, num2A, num3A;
@@ -753,13 +753,13 @@ if (num1A>num2A){
         return num3A;
         getch();
     }
-
+   return -1;
 }
 
 int large2(int num1B, int num2B){
-    system("cls");
+    //system("cls");
 
-cout<<"Largest among 2 numbers"<<endl;
+cout<<"\n\nLargest among 2 numbers"<<endl;
 cout<<"--------------------------"<<endl;
 
 /*int num1B, num2B;
@@ -821,10 +821,10 @@ else{
 getch();
 }
 
-void avrg(int prelim, int midterm, int finals){
+void avrg3(int prelim, int midterm, int finals){
 
-    system("cls");
-cout<<"Compute the average grade"<<endl;
+    //system("cls");
+cout<<"\n\nCompute the average grade"<<endl;
 cout<<"---------------------------------"<<endl;
 int avrg;
 /*int prelim, midterm, finals, avrg;
@@ -849,8 +849,8 @@ if(avrg>=75)
   cout<<"Failed";
 
   getch();
-}
 
+}
 
 float comm(void){
 
@@ -883,7 +883,7 @@ char salesman_name[100];
     
     commission= Total_sales*0.10;
     
-   // cout<<"\ncommission = "<<commission;
+   cout<<"\ncommission = ";
    return commission;
    getch();
     }
@@ -892,7 +892,7 @@ char salesman_name[100];
     
     commission= Total_sales*0.15;
     
-    //cout<<"\ncommission = "<<commission;
+    cout<<"\ncommission = ";
     return commission;
    getch();
     
@@ -901,7 +901,7 @@ char salesman_name[100];
     else if (Total_sales<=20000){
     commission= Total_sales*0.20;
     
-    //cout<<"\ncommission = "<<commission;
+    cout<<"\ncommission = ";
     return commission;
    getch();
     }
@@ -910,7 +910,7 @@ char salesman_name[100];
     
     commission= Total_sales*0.30;
     
-    //cout<<"\ncommission = "<<commission;
+    cout<<"\ncommission = ";
     return commission;
    getch();
     }
@@ -947,11 +947,11 @@ else if(c=='O'|| c=='o'){
 }
 
 else if(c=='U' || c=='u'){
-    cout<<"Vowel";
+    cout<<"\nVowel";
 }
 
 else{
-    cout<<"Consonant";
+    cout<<"\nConsonant";
 
 }
 
@@ -1185,6 +1185,7 @@ n4++;
 return sum2;
 }
 }
+return -1;
 }
 
 
@@ -1389,13 +1390,498 @@ void dowhile4(int x){
 
 
 
+//=================================================================================================================
+// One Dimentional Array functions
+
+
+void Display_All_Even(void){
+ //Array even numbers
+
+ system("cls");
+
+    int num[10];
+
+for (int i=0; i<10;i++){
+    cout<<"Enter a number "<<i+1<<": ";
+    cin>>num[i];
+    
+    }
+
+cout<<"\n";
+
+for (int i=0; i<10; i++){
+   
+    if (num[i] % 2 == 0){
+       cout<<"Even number is: "<<num[i]<<endl;
+       }
+    }
+    
+}
+
+
+
+void Display_All_Even(int num[]){
+cout<<"\n";
+ 
+
+for (int i=0; i<10; i++){
+   
+    if (num[i] % 2 == 0){
+       cout<<"Even number is: "<<num[i]<<endl;
+       }
+    }
+
+    getch();
+}
+
+
+//=====================================================================================
+
+void Largest_Three(void){
+
+    system("cls");
+
+
+    int Array[10],num1=0,num2=0,num3=0;
+	
+    //int i=0;
+
+    for(int i=0;i<=9;i++){
+    	cout<<"Enter a number "<<i+1<<" : ";
+    	
+    	cin>>Array[i];
+	}
+	
+	cout<<"\nThe three largest numbers are : "<<endl;
+	for(int i=0;i<=9;i++){
+		if(Array[i]>num1){
+		 num3=num2;
+		 num2=num1;
+		 num1=Array[i];
+		 
+		 }
+		 
+		else if(Array[i]>num2){
+		 num2=num1;
+		 num1=Array[i];
+		 
+		}
+		
+		else if(Array[i]>num3){
+		 num3=Array[i];
+		 
+		 }       
+}
+
+     cout<<num1<<endl;
+     cout<<num2<<endl;
+     cout<<num3<<endl;
+
+
+
+}
+
+void Largest_Three( int Array[]){
+
+    
+    int num1=0,num2=0,num3=0;
+	
+    //int i=0;
+
+    
+	
+	cout<<"\nThe three largest numbers are : "<<endl;
+	for(int i=0;i<=9;i++){
+		if(Array[i]>num1){
+		 num3=num2;
+		 num2=num1;
+		 num1=Array[i];
+		 
+		 }
+		 
+		else if(Array[i]>num2){
+		 num2=num1;
+		 num1=Array[i];
+		 
+		}
+		
+		else if(Array[i]>num3){
+		 num3=Array[i];
+		 
+		 }       
+}
+
+     cout<<num1<<endl;
+     cout<<num2<<endl;
+     cout<<num3<<endl;
+
+}
+
+ //===============================================================================================================
+ void Total_Pos_Neg(void){
+    
+    system("cls");
+
+    int array[10];
+    int totalP = 0, totalN = 0; // Initialize both variables to 0
+
+    // Input the contents of the array
+    for (int i=0; i<10; i++) {
+        cout << "Enter element " << i+1 << ": ";
+        cin >> array[i];
+    }
+
+    // Compute the sum of positive and negative numbers
+    for (int i=0; i<10; i++) {
+        if (array[i] > 0) {
+            totalP += array[i];
+        }
+        else {
+            totalN += array[i];
+        }
+    }
+
+    // Output the results
+    cout << "\nThe sum of positive numbers is: " << totalP << endl;
+    cout << "The sum of negative numbers is: " << totalN << endl;
+
+ }
+
+void Total_Pos_Neg(int array[] ){
+    
+    
+cout<<"\n";
+    
+    int totalP = 0, totalN = 0; // Initialize both variables to 0
+
+    // Input the contents of the array
+   
+
+    // Compute the sum of positive and negative numbers
+    for (int i=0; i<10; i++) {
+        if (array[i] > 0) {
+            totalP += array[i];
+        }
+        else {
+            totalN += array[i];
+        }
+    }
+
+    // Output the results
+    cout << "The sum of positive numbers is: " << totalP << endl;
+    cout << "The sum of negative numbers is: " << totalN << endl;
+
+ }
+
+ 
+//===============================================================
+ void Count_Int(int arr[], int size, int no){
+
+
+    int count=0;
+
+   for (int i=0; i<size; i++){
+    if(arr[i]==no){
+        count +=1; 
+    }
+   }
+
+    if (count>0){
+        cout<<"\nThe occurrences of "<<no<<" in the array are: "<<count;
+    }
+    else{
+        cout<<"\nThere is no occurences of "<< no<< " int he array";
+    }
+ getch();
+ }
+ 
+void Count_Int(int arr1[100], int size){
+
+int no, count=0;
+
+
+   cout<<"\n\nEnter a number: ";
+   cin>>no;
+
+
+   for (int i=0; i<size; i++){
+    
+    if(arr1[i]==no){
+        count +=1;
+        
+    
+   }
+   }
+    if (count>0){
+        cout<<"\nThe occurrences of "<<no<<" in the array are: "<<count;
+    }
+    else{
+        cout<<"\nThere is no occurences of "<< no<< " in the array";
+    }
+
+getch();
+
+}
+
+
+void pyramid(int row){
+ 
+char x=65;
+
+while (x<row+65){
+    
+    char y='A';
+
+    while(y<=x){
+        cout<<x<<" ";
+       y ++;
+    } 
+    x++;
+    cout<<endl;
+}
+
+}
 
 
 
 
 
+int occurs(int ar[], int sizee){
+int max_count = 0;
+   int most_occured = 0;
+
+   for(int i=0; i<sizee; i++)
+   {
+    int count =1;
+
+    for(int j=i+1; j<sizee; j++)
+    {
+        if( ar[i]==ar[j])
+        {
+            count++;           
+        }
+    }
+        
+    if(count>max_count)
+    {
+        max_count = count;
+        most_occured = ar[i]; 
+        
+    }
+     
+   }
 
 
+
+  return most_occured;
+}
+
+
+//=======================================================================================================================
+// Two Dimentional Array
+
+void Display_All_Even(int arrays[][100], int row, int column){
+
+ cout<<"\nEven number is: ";  
+for (int i=0;i<row;i++){
+    for (int j=0;j<column;j++){
+      if (arrays[i][j]%2==0){
+        cout<<arrays[i][j]<<", ";
+      }
+    }
+  }
+getch();
+}
+//=====================================================================================
+
+
+void Largest_Three(int Array1[][100], int roww, int columnn){
+
+    int num1=0, num2=0, num3=0;
+
+        cout<<"\nThe Three Largest number are: \n";
+
+        for(int i=0; i<5;i++){
+            for(int j=0; j<2;j++){
+
+                if (Array1[i][j]>num1){
+
+                    num3=num2;
+                    num2=num1;
+                    num1=Array1[i][j];
+
+                }
+
+                else if(Array1[i][j]>num2){
+                    num2=num1;
+                    num1=Array1[i][j];
+                }
+
+                else if(Array1[i][j]>num3){
+                    num3=Array1[i][j];
+                }
+            }
+        }
+
+        cout<<num1<<endl;
+        cout<<num2<<endl;
+        cout<<num3<<endl;
+
+        getch();
+    }
+
+
+
+ //===============================================================================================================
+ 
+
+ void Total_Pos_Neg(int ar[][100], int roow, int coolumn){
+
+    int totalP=0, totalN=0;
+
+   
+
+    for(int i=0;i<roow;i++){
+        for(int j=0;j<coolumn;j++){
+            if (ar[i][j]>0){
+                totalP += ar[i][j];
+
+            }
+            else{
+                totalN += ar[i][j];
+            }
+        }
+    }
+
+    cout<<"\nThe sum of all positive numbers is: "<<totalP<<endl;
+    cout<<"The sum of all negative numbers is: "<<totalN<<endl;
+ }
+
+//===============================================================
+ 
+ 
+void Count_Int(int arr1[][100], int rows, int columns){
+
+int no, count=0;
+
+
+   cout<<"\n\nEnter a number: ";
+   cin>>no;
+
+
+   for (int i=0; i<rows; i++){
+    for(int j=0;j<columns;j++){
+    if(arr1[i][j]==no){
+        count +=1;
+        
+    }
+   }
+   }
+    if (count>0){
+        cout<<"\nThe occurrences of "<<no<<" in the array are: "<<count;
+    }
+    else{
+        cout<<"\nThere is no occurences of "<< no<< " in the array";
+    }
+
+getch();
+
+
+}
+
+void diagonal(int a[][100], int rows, int cols){
+
+int Pdiagonal=0, Sdiagonal=0;
+
+
+ for(int i=0;i<rows;i++)
+    {
+      cout<<endl;
+      for(int j=0;j<cols;j++)
+      {
+        cout<<a[i][j]<<" ";
+      }
+    }
+
+
+
+for (int i=0; i<rows;i++)
+{
+    for(int j=0;j<cols;j++)
+    {
+        if(i==j)
+        {
+            Pdiagonal += a[i][j];
+
+        }
+        if( i == rows-j-1)
+        {
+            Sdiagonal += a[i][j];
+        }
+    }
+}
+
+
+
+cout<<"\nThe sum for Principal diagonal is: "<<Pdiagonal;
+cout<<"\nThe sum for Secondary diagonal is: "<<Sdiagonal;
+
+
+}
+
+void mTable(int ar[10][10]){
+int total=10;
+
+for(int i=1;i<=total;i++)
+{
+    for(int j=1; j<=total;j++)
+    {
+        ar[i][j] = i*j;
+        
+    }
+}
+
+for(int i=1;i<=total;i++)
+{
+    for(int j=1;j<=total;j++)
+    {
+        cout<<" "<<ar[i][j]<<"\t";
+    }
+    cout<<endl;
+}
+
+}
+//==========================================================================================================
+//Recursive function
+
+
+//recursive factorial
+int recursive_fact(int m , int n){
+    if(n==0)
+    return 1;
+
+   /* if(n<0){
+   char a[50]  ="Invalid number";
+    return a;
+    }*/
+
+    if(m==n)
+    return m;
+
+
+
+    return m * recursive_fact(m+1,n);
+}
+
+
+
+//recursive sum
+int recursive_sum(int a, int b){
+    if (a==b)
+    return a;
+
+    return a + recursive_sum(a+1, b);
+}
 
 }
 #endif

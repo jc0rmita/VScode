@@ -1,3 +1,6 @@
+//JHON CARL T. ORMITA 
+//BSIT 1-1 
+
 #include <iostream>
 #include <windows.h>
 #include <conio.h>
@@ -77,7 +80,7 @@ const int DAYS=7;
 double pound(int steps[][7],int WEEKS)
 {
 
-double calories=0, pound =0;
+double pound =0;
 const double steps_per_pound = 35000;
 int totalSteps=0;
 
@@ -135,9 +138,6 @@ bool found =false;
 
 int row_index=0;
 int col_index=0;
-
-   // cout<<"\nEnter the element you want to find: ";
-    //cin>>wanted;   
 
 for(int i=0; i<WEEKS; i++)
 {
